@@ -5,4 +5,6 @@ namespace WorkTimeAPI.Service.Interfaces;
 public interface IWorkTimeService
 {
     Task<List<DailyWorkLog>> GetCurrentMonthAsync(int userId);
+
+    Task<DailyWorkLog?> GetByIdAsync(int id);
 }

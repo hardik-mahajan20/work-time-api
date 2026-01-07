@@ -10,4 +10,7 @@ public class WorkTimeService(IWorkTimeRepository repository) : IWorkTimeService
 
     public Task<List<DailyWorkLog>> GetCurrentMonthAsync(int userId)
         => _repository.GetCurrentMonthLogsAsync(userId);
+
+    public Task<DailyWorkLog?> GetByIdAsync(int id)
+        => _repository.GetByIdAsync(id);
 }

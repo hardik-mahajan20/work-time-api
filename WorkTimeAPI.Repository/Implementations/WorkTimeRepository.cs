@@ -22,4 +22,11 @@ public class WorkTimeRepository(WorkLogContext context) : IWorkTimeRepository
             .AsNoTracking()
             .ToListAsync();
     }
+    
+    public async Task<DailyWorkLog?> GetByIdAsync(int id)
+    {
+        return await _context.DailyWorkLogs
+        .AsNoTracking()
+        .FirstOrDefaultAsync(x => x.WorkLogId == id);
+    }
 }
